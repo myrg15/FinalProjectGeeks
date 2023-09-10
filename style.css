@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/*
+font-family: 'Oswald', sans-serif;
+font-family: 'Poppins', sans-serif;
+*/
+
+*{ /*reseteamos css a cero con margen, padding*/
+    margin: 0;/*Reseteo de los margenes*/
+    padding: 0;/*Reseteo de los margenes*/
+    box-sizing: border-box;
+    text-decoration: none;/*quitamos las lineas de los textos de enlaces*/
+    list-style: none; /*quitamos las bolitas de las listas*/
+
+}
+
+body{ 
+    font-family: 'Poppins', sans-serif;
+
+}
+
+img{ 
+    max-width: 100%; /*para que las imagenes sean responsive*/
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto; /*margen arriba y abajo, para que mantenga los 1200*/
+
+}
+
+.header{/*trabajamos un primer escritorio*/
+    display: flex;
+    align-items: center;
+    min-height:80vh;/*altura maxima del header*/
+    background-color: #f5f5f5;
+    padding: 70px 0;/*Arriba y abajo 70% izq-der 0*/
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;/*colocar los elementos de forma horizontal*/
+    align-items: center;
+    justify-content: space-between;/*dejamos espacios entre ellos*/
+}
+.logo{
+    font-size: 40px;
+    color: #111111;
+    text-transform: uppercase;
+    font-weight: 800; /*grosor de fuentes*/
+}
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li{
+    font-size: 18px;
+    padding: 20px;
+    color: #111111;
+    display: block;
+}
+
+#menu{
+    display: none;/*ocultamos el imput*/
+}
+
+.menu-icon{
+    width: 25px;
+}
+
+.logo-principal{
+    width: 80px;
+}
+
+#img-carrito{
+    width: 70px;
+}
+
+.menu label{
+    cursor:pointer;/*para aparecer la manita tipo cursor*/
+    display: none;/*lo dejamos en none hasta hacerlo responsive*/
+}
+.submenu{
+    position: relative;  
+}
+
+.submenu #carrito{
+    display: none;/*ocultamos el carrito hasta que pasemos el mouse por ese icono*/
+}
+
+.submenu:hover #carrito{ /*cuando pasamos el cursor por el carrito aparece */
+    display: block;/*aparece el carrito*/
+    position:absolute;
+    right: 0;/*que este a la derecha*/
+    backdrop-filter: blur(10px);
+    top: 100%;
+    z-index: 1;/*siempre se colocara delante de cualquier elemento*/
+    background-color: #4e4b5076;
+    padding: 20px;/*en todas las direcciones*/
+    min-width: 400px;
+}
+
+table{
+    width: 100%;
+}
+
+th,td{
+    color:#ffffff;
+}
+
+.borrar{
+    background-color: #111111;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding: 0 150px;
+}
+
+.header-img{
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.header-txt{
+    flex-basis: 50%;
+    text-align: center;
+}
+.header-txt h1{
+    font-size: 70px;
+    text-transform: uppercase;
+    line-height: 1; 
+    color: #111111;
+    font-family: 'Oswald', sans-serif ;
+    margin-bottom: 15px;
+}
+.header-txt p {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.btn-1{ /*dando forma de boton*/
+    display: inline-block;
+    padding: 11px 25px;
+    background-color: #111111;
+    color: #ffffff;
+    border-radius: 5px;/*bordeamos las esquinas del boton a 5px*/
+    cursor: pointer;
+}
+
+.ofert{
+    padding: 20px 0 0 0;/*alineamos los margenes*/
+    display:flex;/*ponemos los elementos unos delante del otro*/
+    justify-content: space-between; /*dejamos espacios entre ellos*/
+}
+
+.ofert-1{
+    display: flex;
+    align-items: center;/*centramos los elementos dentro*/
+    flex-basis: calc(33.3% - 15px);/*queremos que sean tres partes de los productos*/
+    background-color:#f5f5f5;
+    padding: 35px;
+}
+
+.ofert-img{
+    flex-basis: 50%;
+    margin-right: 15px;/*dejamos separacion hacia la derecha*/
+}
+
+.ofert-img img{
+    width:250px;
+}
+
+.ofert-txt{
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.ofert-txt h3{
+    color: #111111;
+    font-family: 'oswald', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.btn-2{
+    display: inline-block;
+    padding: 7px 10px;
+    background-color: #111111;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.products {
+    padding: 50px 0 ;
+    text-align: center;
+}
+
+#imanprinci{
+    width: 200px;
+    height: 200px;
+
+}
+
+.products h2 {
+    color: #111111;
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 50px;/*dejamos separacion entre el titulo y la imagen*/
+}
+
+.product-content{
+    display: grid;/*mostramos en una columna, dando el orden a cada producto uno debajo del otro*/
+    grid-template-columns: repeat(3, 1fr);/*definimos el numero de coloumna (3) y con una fraccion 1fr*/
+    gap : 50px;/*definimos separacion en colum y row */
+}
+.products {
+    text-align: center;
+    padding: 30px;
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.1);/*definimos una caja sombreada*/
+}
+
+.products img{
+    width: 250px;
+    height: 370px;
+    margin-bottom: 20px;
+}
+
+.products h3{
+    font-size: 20px;
+    color: #111111;
+    font-family: 'Oswal', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.products p, .precio{
+    font-size: 16px;
+    color:#111111;
+    margin-bottom: 15px;
+}
+
+.precio{
+    font-weight: 800px;
+}
+
+.icons {
+    padding: 50px 0 100px 0;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.icon-1{
+    flex-basis: calc(33.3% - 30px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    background-color: #f5f5f5;
+}
+.icon-img{
+    background-size:50%;
+    width: 250px;
+    height: 400px;
+}
+.icon-txt h3{
+    font-size: 15px;
+    color: #111111;
+    font-family: 'Oswald', sans-serif;
+    align-items: center;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.icon-txt p{
+    font-size: 15px;
+    color: #111111;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.blog{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 100px;
+}
+
+.blog-1{
+    flex-basis: calc(33.3% - 30px);
+}
+
+.blog-1 img{
+    margin-bottom: 20px;
+}
+
+.blog-1 h3{
+    font-size: 20px;
+    color: #111111;
+    font-family: 'Oswal', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.blog-1 p{
+    font-size: 16px;
+    color: #111111;
+}
+
+.footer {
+    padding: 50px 0;
+    background-color: #111111;
+}
+.footer-conten {
+    display: flex;
+    justify-content: space-between;
+}
+.link h3{
+    font-size: 18px;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.link a{
+    font-size: 16px;
+    color: #dcdcdc;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/*Entramos en la parte Responsive*/
+
+@media (max-width:991px){
+
+    .menu {
+        padding: 20px;
+    }
+    
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #181818;
+        display: none;
+    }
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    .menu .navbar ul li a{
+        color: #ffffff;
+    }
+        
+    #menu:checked ~ .navbar {
+            display: initial;
+        }
+
+        .logo-principal {
+            display: none;
+        }
+
+        .submenu:hover #carrito {
+            min-width: 100%;
+        }
+
+        .header{
+            min-height: 0vh;
+        }
+
+        .header-content{
+            padding: 50px 0;
+            flex-direction: column;
+        }
+        .header-img {
+            display: none;
+        }
+        .header-txt{
+            flex-basis: 100%;
+            text-align: center;
+        }
+
+        .header-txt h1{
+            font-size: 70px;
+        }
+        .ofert{
+            padding: 30px 30px 0 30px;
+            flex-direction: column;
+        }
+        .ofert-1{
+            margin-bottom: 30px;
+        }
+        .products{
+            padding: 0 50px 50px 50px;
+        }
+        .products h2{
+            margin-bottom: 30px;
+        }
+        .product-content {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 50px;
+        }
+        .products img{
+            width: 500px;
+            height: 120px;
+        }
+        .icons {
+            padding: 30px;
+            flex-direction: column;
+        }
+
+        .icon-1 {
+            margin-bottom: 30px;
+        }
+
+        .blog {
+            padding: 0 30px 30px 30px;
+            flex-direction: column;
+        }
+
+        .blog-1 {
+            margin-bottom: 30px;
+        }
+
+        .footer {
+            padding: 30px;
+        }
+
+        .footer-conten {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        
+
+}
+
